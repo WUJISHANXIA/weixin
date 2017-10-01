@@ -50,5 +50,5 @@ class ImageMsg(Msg):
         </Image>
         </xml>
         """
-        return image_form.format(self.__dict)
+        return image_form.format(**self.__dict)
 

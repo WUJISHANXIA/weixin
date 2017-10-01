@@ -31,7 +31,7 @@ def test_token():
 
 @app.route('/wx',method='POST')
 def weixin():
-    receive_msg = receive.parse_xml(request.body)
+    receive_msg = receive.parse_xml(request.body.read())
     if receive_msg.msg_type == 'text':
         reply_msg = reply.TextMsg(
             to_user_name=receive_msg.from_user_name,
